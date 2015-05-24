@@ -7,7 +7,7 @@
     "pretest": "eslint .",
     "browser-app": "browserify ./client/js/app.js -o ./client-dist/js/app.js",
     "browser-prod-app": "browserify ./client/js/app.js -p bundle-collapser/plugin -o ./client-dist/js/app-prod.js",
-    "uglify-app": "uglifyjs ./client-dist/js/app-prod.js -c -o ./client-dist/js/app.min.js",
+    "uglify-app": "uglifyjs ./client-dist/js/app-prod.js -m -c -o ./client-dist/js/app.min.js",
     "app": "npm run browser-app && npm run --production browser-prod-app && npm run uglify-app",
     "watch": "watchify ./client/js/app.js -o ./client-dist/js/app.js",
     "less": "lessc --no-ie-compat --no-js --include-path=node_modules --glob --clean-css client/less/index.less client-dist/css/app.min.css"
@@ -50,6 +50,7 @@
     "less": "^2.5.1",
     "less-plugin-clean-css": "^1.5.0",
     "less-plugin-glob": "^1.1.0",
+    "uglify-js": "^2.4.23",
     "watchify": "^3.2.1"
   },
   "repository": {
