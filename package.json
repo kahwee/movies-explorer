@@ -43,7 +43,6 @@
     "babelify": "^6.1.1",
     "browserify": "^10.2.1",
     "bundle-collapser": "^1.2.0",
-    "clean-css": "^3.2.10",
     "eslint": "^0.21.2",
     "gulp": "^3.8.11",
     "jscs": "^1.13.1",
