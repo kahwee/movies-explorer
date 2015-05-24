@@ -1,0 +1,13 @@
+* text eol=lf
+*.sql text
+
+*.ico binary
+*.zip binary
+*.mov binary
+*.flv binary
+*.png binary
+*.jpg binary
+*.gif binary
+
+*.min.js merge=ours
+*.js.map merge=ours

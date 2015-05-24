@@ -1,0 +1,10 @@
+{
+  "db": {
+    "host": "localhost",
+    "database": "movies",
+    "password": "root",
+    "name": "db",
+    "connector": "mysql",
+    "user": "root"
+  }
+}

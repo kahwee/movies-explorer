@@ -1,0 +1,73 @@
+{
+  "name": "movies-explorer",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "postinstall": "npm run app && npm run less",
+    "pretest": "eslint .",
+    "browser-app": "browserify ./client/js/app.js -o ./client-dist/js/app.js",
+    "browser-prod-app": "browserify ./client/js/app.js -p bundle-collapser/plugin -o ./client-dist/js/app-prod.js",
+    "uglify-app": "uglifyjs ./client-dist/js/app-prod.js -c -o ./client-dist/js/app.min.js",
+    "app": "npm run browser-app && npm run --production browser-prod-app && npm run uglify-app",
+    "watch": "watchify ./client/js/app.js -o ./client-dist/js/app.js",
+    "less": "lessc --no-ie-compat --no-js --include-path=node_modules --glob --clean-css client/less/index.less client-dist/css/app.min.css"
+  },
+  "dependencies": {
+    "async": "^1.0.0",
+    "bootstrap": "^3.3.4",
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "errorhandler": "^1.1.1",
+    "fetch-json": "^2.0.0",
+    "jade": "^1.9.2",
+    "jquery": "^2.1.4",
+    "lodash": "^3.9.1",
+    "loopback": "^2.14.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-connector-mysql": "^2.1.0",
+    "loopback-datasource-juggler": "^2.19.0",
+    "moment": "^2.10.3",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "react-router-active-component": "^2.0.0",
+    "serve-favicon": "^2.0.1",
+    "strong-express-metrics": "^1.1.0",
+    "whatwg-fetch": "^0.8.2"
+  },
+  "optionalDependencies": {
+    "loopback-explorer": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^5.4.7",
+    "babel-eslint": "^3.1.8",
+    "babelify": "^6.1.1",
+    "browserify": "^10.2.1",
+    "bundle-collapser": "^1.2.0",
+    "clean-css": "^3.2.10",
+    "eslint": "^0.21.2",
+    "gulp": "^3.8.11",
+    "jscs": "^1.13.1",
+    "jshint": "^2.5.6",
+    "less": "^2.5.1",
+    "less-plugin-clean-css": "^1.5.0",
+    "less-plugin-glob": "^1.1.0",
+    "watchify": "^3.2.1"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "optional": [
+            "es7.asyncFunctions"
+          ]
+        }
+      ]
+    ]
+  },
+  "description": "movies"
+}
