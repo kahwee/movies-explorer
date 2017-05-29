@@ -1,5 +1,7 @@
 # My Application
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kahwee/movies-explorer.svg)](https://greenkeeper.io/)
+
 This is a Single Page App built using React, React Router and [LoopBack](http://loopback.io).
 
 ## Prerequisites
